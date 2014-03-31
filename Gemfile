@@ -26,3 +26,7 @@ group :production do
   gem 'pg'
   gem 'uglifier'
 end
+
+
+# Use has_secure_password for authentication
+gem 'bcrypt-ruby', '~> 3.1.2'
