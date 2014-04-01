@@ -117,7 +117,7 @@ width: 43px;
 }
 
 div#loader.grid_loader {
-background: url(../gif/indicator.squares.gif);
+background: url(/assets/gif/indicator.squares.gif);
 background-position: center center;
 background-repeat: no-repeat;
 background-size: 43px 11px;
@@ -129,7 +129,7 @@ width: 100%;
 }
 
 div#filter_processing {
-background: url(../gif/indicator.squares.gif);
+background: url(/assets/gif/indicator.squares.gif);
 background-position: center center;
 background-repeat: no-repeat;
 background-size: 43px 11px;
@@ -320,7 +320,7 @@ select:focus {outline-color: transparent; outline-style: none;}
 /* customSelect */
 span.customSelect {
 background-color: #FFFFFF !important;
-background: #FFFFFF url(../png/select_arrow.png);
+background: #FFFFFF url(/assets/png/select_arrow.png);
 background-repeat: no-repeat;
 background-position: 96% 50%;
 border: 2px solid #DDDDDD;
@@ -726,7 +726,7 @@ z-index: 800;
 }
 
 div.modal {
-background: #FFFFFF url(../png/backgrounds/modal_header.png);
+background: #FFFFFF url(/assets/png/backgrounds/modal_header.png);
 background-repeat: repeat-x;
 border-radius: 3px;
 -moz-border-radius: 3px;
@@ -1070,7 +1070,7 @@ text-align: center;
 }
 
 div#matches div.modal section.content ul li#ebay span.logo {
-background: url(../png/ebay.png);
+background: url(/assets/png/ebay.png);
 background-position: center center;
 background-repeat: no-repeat;
 height: 35px;
@@ -1078,7 +1078,7 @@ width: 100%;
 }
 
 div#matches div.modal section.content ul li#amazon span.logo {
-background: url(../png/amazon.png);
+background: url(/assets/png/amazon.png);
 background-position: center center;
 background-repeat: no-repeat;
 height: 35px;
@@ -1086,7 +1086,7 @@ width: 100%;
 }
 
 div#matches div.modal section.content ul li#completeset span.logo {
-background: url(../png/completeset.png);
+background: url(/assets/png/completeset.png);
 background-position: center center;
 background-repeat: no-repeat;
 height: 35px;
@@ -1099,7 +1099,7 @@ div#matches div.modal footer.actions {text-align: center;}
 div#indicator {z-index: 1000;}
 
 div#indicator div.modal {
-background: url(../gif/indicator.circle.gif);
+background: url(/assets/gif/indicator.circle.gif);
 background-position: center center;
 background-repeat: no-repeat;
 background-size: 64px 64px;
@@ -1534,18 +1534,18 @@ width: 350px \9;
 }
 
 body#home div#container div#main section#discover div.case div.card div.column div.image img {
-background-image: url(../jpg/discover.700.jpg);
-background-image: url(../jpg/discover.350.jpg) \9;
+background-image: url(/assets/jpg/discover.700.jpg);
+background-image: url(/assets/jpg/discover.350.jpg) \9;
 }
 
 body#home div#container div#main section#showcase div.case div.card div.column div.image img {
-background-image: url(../jpg/showcase.700.jpg);
-background-image: url(../jpg/showcase.350.jpg) \9;
+background-image: url(/assets/jpg/showcase.700.jpg);
+background-image: url(/assets/jpg/showcase.350.jpg) \9;
 }
 
 body#home div#container div#main section#exchange div.case div.card div.column div.image img {
-background-image: url(../jpg/exchange.700.jpg);
-background-image: url(../jpg/exchange.350.jpg) \9;
+background-image: url(/assets/jpg/exchange.700.jpg);
+background-image: url(/assets/jpg/exchange.350.jpg) \9;
 }
 
 /* Styles the scroller. */
@@ -1581,7 +1581,7 @@ margin: 20px auto 0px auto;
 /* Styles the elements inside the hero. */
 body#home div#container div#main section#hero {
 background: #000000;
-background-image: url(../jpg/heroes/space.jpg);
+background-image: url(/assets/jpg/heroes/space.jpg);
 background-position: center center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -1723,7 +1723,7 @@ body#home div#container div#main section#hero div.case div.card div.column div.c
 
 /* A set of avid record-breaking collectors. */
 body#home div#container div#main section#kikai {
-background: url(../jpg/heroes/kikai.jpg);
+background: url(/assets/jpg/heroes/kikai.jpg);
 background-position: center center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -1731,7 +1731,7 @@ height: 700px;
 }
 
 body#home div#container div#main section#sansweet {
-background: url(../jpg/heroes/sansweet.jpg);
+background: url(/assets/jpg/heroes/sansweet.jpg);
 background-position: center center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -1739,7 +1739,7 @@ height: 700px;
 }
 
 body#home div#container div#main section#martin {
-background: url(../jpg/heroes/martin.jpg);
+background: url(/assets/jpg/heroes/martin.jpg);
 background-position: top center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -1747,7 +1747,7 @@ height: 700px;
 }
 
 body#home div#container div#main section#brown {
-background: url(../jpg/heroes/brown.jpg);
+background: url(/assets/jpg/heroes/brown.jpg);
 background-position: center 10%;
 background-repeat: no-repeat;
 background-size: cover;
@@ -1841,7 +1841,7 @@ width: 100%;
 
 /* Displays the CompleteSet logo. */
 body.access div#container h1 {
-background: url(../png/completeset.white.png);
+background: url(/assets/png/completeset.white.png);
 background-position: center center;
 background-repeat: no-repeat;
 background-size: 250px 55px;
@@ -2231,7 +2231,7 @@ body#stickers {}
 body#stickers div#container div#main div.wrapper {}
 
 body#stickers div#container div#main div.wrapper div.hero {
-background-image: url(../jpg/stickers.jpg);
+background-image: url(/assets/jpg/stickers.jpg);
 background-position: center center;
 background-size: cover;
 border-bottom: 1px solid #E6E6E6;
@@ -3257,7 +3257,7 @@ border-radius: 50%;
 }
 
 body#profile div#container div#main div#cover div#profile_header div#profile_information h1 span.profile_verified {
-background: url(../png/verified.png);
+background: url(/assets/png/verified.png);
 background-repeat: no-repeat;
 background-size: 21px 21px;
 display: inline-block;
@@ -4223,7 +4223,7 @@ body#about {}
 body#about div#container div#main {padding-top: 60px;}
 
 body#about div#container div#main div#content {
-background: url(../png/backgrounds/content.png);
+background: url(/assets/png/backgrounds/content.png);
 background-repeat: repeat-y;
 }
 
@@ -4510,7 +4510,7 @@ position: relative;
 }
 
 body div#container div#main header#green div.left div#hamburger_menu_container span.caret {
-background: url(../png/caret.top.png);
+background: url(/assets/png/caret.top.png);
 background-repeat: no-repeat;
 background-position: center center;
 height: 15px;
@@ -4674,7 +4674,7 @@ body div#container div#main header#green div.left div.search form button:hover {
 
 /* The logo and home link. */
 body div#container div#main header#green a#completeset {
-background: url(../png/completeset.white.png);
+background: url(/assets/png/completeset.white.png);
 background-position: 0 0;
 background-repeat: no-repeat;
 background-size: 136px 30px;
@@ -4774,7 +4774,7 @@ width: 150px;
 body div#container div#main header#green div.right div#user_menu_container div#user_menu {position: relative;}
 
 body div#container div#main header#green div.right div#user_menu_container span.caret {
-background: url(../png/caret.top.png);
+background: url(/assets/png/caret.top.png);
 background-repeat: no-repeat;
 background-position: center center;
 height: 15px;
@@ -4969,7 +4969,7 @@ width: 150px;
 }
 
 div#dock div#controls_menu_container span.caret {
-background: url(../png/caret.left.png);
+background: url(/assets/png/caret.left.png);
 background-repeat: no-repeat;
 background-position: center center;
 height: 27px;
@@ -5036,7 +5036,7 @@ transform: translate(5px,0px);
 div#dock nav#toggle ul li.view.selected div.tooltip {margin-top: -35px;}
 
 div#dock nav#toggle ul li.view span.tooltip_caret {
-background: url(../png/caret.tooltip.png);
+background: url(/assets/png/caret.tooltip.png);
 background-position: center center;
 background-repeat: no-repeat;
 height: 33px;
@@ -5822,7 +5822,7 @@ div#filter ul li a.selected div.label {color: #87D787;}
 
 /* !ERROR (404) */
 body#error.lost {
-background-image: url(../jpg/404.jpg);
+background-image: url(/assets/jpg/404.jpg);
 background-position: center center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -5903,7 +5903,7 @@ width: 700px;
 }
 
 body#error.unsupported div#container div#notice div#logo a {
-background: url(../png/login.png);
+background: url(/assets/png/login.png);
 background-position: center center;
 background-repeat: no-repeat;
 background-size: 100% 100%;
@@ -5962,7 +5962,7 @@ transform: scale(1.1,1.1);
 }
 
 body#error.unsupported div#container div#notice ul#browsers li div.icon {
-background: url(../png/sprites/browsers.png);
+background: url(/assets/png/sprites/browsers.png);
 background-position: center center;
 background-repeat: no-repeat;
 height: 131px;
