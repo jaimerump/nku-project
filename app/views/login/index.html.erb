@@ -1,29 +1,52 @@
-<h1>Login</h1>
-<% @body_id = "login" %>
+<% 
+# Set up layout variables 
+@body_id = "login"
+@body_classes = "access"
+%>
 
-<%= form_for( @user, as: :user, url: login_process_path, method: :post ) do |f| %>
-
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<!--// CONTAINER //-->
+<div id="container">
+	<h1><span>CompleteSet</span></h1>
+	<div id="content" class="wrapper">
+    
+    <%= form_for( @user, as: :user, url: login_process_path, method: :post ) do |f| %>
+      
+      <h2>Log In To Collect</h2>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
+    
+      <!--// STANDARD LOGIN //-->
+		  <ul class="standard_login">
+        <!--// USERNAME //-->
+        <li class="username_field">
+          <span class="field">
+            <%= f.text_field :email, :placeholder => "Email Address" %>
+          <p class="error_message"></p>
+          </span>
+        </li>
+      
+        <!--// PASSWORD //-->
+        <li class="password_field">
+          <span class="field">
+            <%= f.password_field :password, :placeholder => "Password" %>
+            <p class="error_message"></p>
+          </span>
+        </li>
+    
+        </ul>
+        <div class="form_footer">
+          <div class="form_footer_buttons">
+          <%= f.submit "Login" %>
+          </div>
+        </div>
+    <% end %>
     </div>
-  <% end %>
-
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
-
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
-
-  <p>
-    <%= f.submit "Login" %>
-  </p>
-<% end %>
+	<br class="clear" />
+</div>

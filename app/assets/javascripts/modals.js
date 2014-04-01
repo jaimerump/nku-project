@@ -20,6 +20,8 @@ function hideGrowl(growl_class){
 	$(".growl."+growl_class).hide();
 }
 
+/*
+//Hide for now because it ugly
 //<DalekVoice> ELEVATE!!! </DalekVoice>
 $("#elevator").click(function(){
 	$('html, body').animate({scrollTop: '0px'}, 800);
@@ -35,7 +37,7 @@ $(window).scroll(function() {
         $("#elevator").fadeOut('fast');
     }
 });
-
+*/
 
 //Image functions
 function showFullSize( path ){

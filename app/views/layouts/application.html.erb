@@ -31,17 +31,16 @@
 
   <%= render 'layouts/modals' %>
   
-  <% if( current_user ) %>
-    Logged in as <%= current_user.full_name %>.
-    <%= link_to "Logout", logout_path %>
-  <% else %>
-    <%= link_to "Login", login_page_path %>
-  <% end %>
-  <br />
+  <!--// CONTAINER //-->
+  <div id="container">
   
+    <!--// MAIN //-->
+    <div id="main">
   
+      <%= yield %>
+     
+    </div>  
+  </div>
   
-  <%= yield %>
-
 </body>
 </html>
