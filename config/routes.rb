@@ -7,4 +7,6 @@ NkuProject::Application.routes.draw do
   
   resources :users
   
+  root "login#index" 
+  
 end

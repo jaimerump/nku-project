@@ -1,0 +1,28 @@
+<!--// Modals used on all pages //-->
+
+<!--// GROWL //-->
+<div class="success growl" style="display: none;"><span class="message"><div class="growl_text"></div><a href="javascript: hideSuccessGrowl()" class="close">Ok</a></span></div>
+<div class="error growl" style="display: none;"><span class="message"><div class="growl_text"></div><a href="javascript: hideErrorGrowl()" class="close">Ok</a></span></div>
+<div class="game growl" style="display: none;"><span class="message"><div class="growl_text"></div><a href="javascript: hideGameGrowl()" class="close">Ok</a></span></div>
+
+<!--// ELEVATOR //-->
+<div id="elevator" style="">
+  <a href="javascript:" class="ss-navigateup"></a>
+</div>
+
+<!--// IMAGE MODAL //-->
+<div id="image" class="overlay" style="visibility: hidden;">
+  <div  class="modal" >
+    <section class="content">
+      <img src="" alt="" />
+    </section>
+  </div>
+</div>
+
+<!--// INDICATOR MODAL //-->
+<div id="indicator" class="overlay" style="visibility: hidden;">
+	<div class="modal" style="">
+	</div>
+</div>
+
+<%= javascript_include_tag "modals" %>
