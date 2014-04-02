@@ -33,6 +33,13 @@
 
   <%= render 'layouts/modals' %>
   
+  <% if( flash[:error] ) %>
+    <script>
+      //Horribly hacky script to display growls until I figure out ajax
+      showGrowl( '<%= flash[:error] %>','error');
+    </script>
+  <% end %>
+  
   <!--// CONTAINER //-->
   <div id="container">
   

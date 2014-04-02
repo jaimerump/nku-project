@@ -28,7 +28,7 @@ class LoginController < ApplicationController
     else
       # Credentials were invalid
       @user = User.new
-      flash.now.notice = "Invalid email or password"
+      flash[:error] = "Invalid email or password"
       render 'index'
     end
     
