@@ -26,3 +26,9 @@
 </div>
 
 <%= javascript_include_tag "modals" %>
+
+<% if(current_user) %>
+  <%= render 'layouts/logged_in_modals' %>
+<% else %>
+  <%= render 'layouts/logged_out_modals' %>
+<% end %>

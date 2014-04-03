@@ -1,0 +1,122 @@
+<!--// HEADER //-->
+<header id="green">
+  <!--// LEFT //-->
+  <div class="left">
+    <div class="hamburger">
+      <button type="button" id="hamburger_menu_button" name="hamburger" class="ss-icon">rows</button>
+    </div>
+    <div class="search">
+      <form id="search_form">
+        <input id="search" type="text" autocomplete="off" placeholder="Search" />
+        <button type="submit" class="ss-icon">search</button>
+      </form>
+    </div>
+    <!--// HAMBURGER MENU //-->
+    <div id="hamburger_menu_container" style="display: none;">
+      <span class="caret top"></span>
+      <div id="hamburger_menu" class="dropbox">
+        <ul class="hamburger_menu_column_one">
+          <li><a href="/collect/them/all/" class="static">Everything</a></li>
+          <li><a href="/collect/just-listed/" class="static">Just Listed</a></li>
+          <li><a href="/collect/new-releases/" class="static">New Releases</a></li>
+          <li><a href="/collect/recently-viewed/" class="static">Recently Viewed</a></li>
+          <li><a href="/{brand}">Android</a></li>
+          <li><a href="/{brand}">Apple</a></li>
+          <li><a href="/{brand}">Atari</a></li>
+          <li><a href="/{brand}">Back To The Future</a></li>
+          <li><a href="/{brand}">Barbie</a></li>
+          <li><a href="/{brand}">Batman</a></li>
+          <li><a href="/{brand}">Beetlejuice</a></li>
+          <li><a href="/{brand}">Buck Rogers In The 25th Century</a></li>
+        </ul>
+        <ul class="hamburger_menu_column_two">
+          <li><a href="/{brand}">Captain Action</a></li>
+          <li><a href="/{brand}">DC Comics</a></li>
+          <li><a href="/{brand}">Disney</a></li>
+          <li><a href="/{brand}">Disney Vinylmation</a></li>
+          <li><a href="/{brand}">Easy-Bake Oven</a></li>
+          <li><a href="/{brand}">Doctor Who</a></li>
+          <li><a href="/{brand}">Electric Zombie</a></li>
+          <li><a href="/{brand}">FunKo</a></li>
+          <li><a href="/{brand}">G.I. Joe</a></li>
+          <li><a href="/{brand}">Ghostbusters</a></li>
+          <li><a href="/{brand}">Gallery 1988</a></li>
+          <li><a href="/{brand}">Gum Cards</a></li>
+        </ul>
+        <ul class="hamburger_menu_column_three">
+          <li><a href="/{brand}">Harry Potter</a></li>
+          <li><a href="/{brand}">Hess</a></li>
+          <li><a href="/{brand}">Indiana Jones</a></li>
+          <li><a href="/{brand}">HOMAGE</a></li>
+          <li><a href="/{brand}">James Bond 007</a></li>
+          <li><a href="/{brand}">JEM And The Holograms</a></li>
+          <li><a href="/{brand}">Johnny Cupcakes</a></li>
+          <li><a href="/{brand}">Kidrobot</a></li>
+          <li><a href="/{brand}">Jurassic Park</a></li>
+          <li><a href="/{brand}">LEGO</a></li>
+          <li><a href="/{brand}">Lost</a></li>
+          <li><a href="/discover/brands" class="more">All Brands</a></li>
+        </ul>
+        <div id="hamburger_menu_footer">
+          <ul id="hamburger_menu_footer_links">
+            <li><a href="/about">About</a></li>
+            <li><a href="/help">Help</a></li>
+            <li><a href="/help/terms">Terms of Service</a></li>
+            <li><a href="/help/privacy">Privacy Policy</a></li>
+            <li><a href="http://www.facebook.com/completeset" target="_blank" class="external">Facebook</a></li>
+            <li><a href="http://www.instagram.com/completeset" target="_blank" class="external">Instagram</a></li>
+            <li><a href="http://completeset.tumblr.com" target="_blank" class="external">Tumblr</a></li>
+            <li><a href="http://www.twitter.com/completeset" target="_blank" class="external">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--// LOGO //-->
+  <div>
+    <a href="/" id="completeset"></a>
+  </div>
+  <!--// RIGHT //-->
+  <div class="right">
+    
+    <% if(current_user) %>
+    
+      <div id="activity_menu_button_container">
+        <button type="button" id="activity_menu_button" name="activity_menu_button" class="ss-icon">0</button>
+      </div>
+      <div id="user_menu_button_container">
+        <button type="button" id="user_menu_button" name="user_menu_button" class="ss-icon">settings</button>
+      </div>
+      <!--// USER MENU //-->
+    <div id="user_menu_container" style="">
+        <span class="caret top"></span>
+        <div id="user_menu" class="dropbox">
+          <ul class="user_menu_column">
+            <!--<li><a href="{user-id}/shelves">Your Shelves</a></li>
+            <li><a href="{user-id}/haves">Your Haves</a></li>
+            <li><a href="{user-id}/wants">Your Wants</a></li>
+            <li><a href="{user-id}/listings">Your Listings</a></li>
+            <li><hr></li>
+            <li><a href="/messages">Messages (3)</a></li>
+            <li><a href="/transactions">Transactions</a></li>
+            <li><hr></li>
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="/curate">Curate</a></li>-->
+            <li><a href="/logout">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    
+    <% else %>
+    
+      <div id="access_menu_container">
+        <button type="button" name="join">Join</button>
+        <button type="button" name="login">Login</button>
+      </div>
+    
+    <% end %>
+    
+  </div>
+</header>
+
+<%= javascript_include_tag "header" %>

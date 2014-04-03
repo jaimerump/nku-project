@@ -43,8 +43,16 @@
   <!--// CONTAINER //-->
   <div id="container">
   
+    <% if(current_user) %>
+      <%= render 'layouts/dock' %>
+    <% end %>
+    
     <!--// MAIN //-->
     <div id="main">
+      
+      <% if( !@hide_header ) %>
+        <%= render 'layouts/header' %>
+      <% end %>
   
       <%= yield %>
      
