@@ -13,15 +13,6 @@
     <%= form_for( @user, as: :user, url: login_process_path, method: :post ) do |f| %>
       
       <h2>Log In To Collect</h2>
-      <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
     
       <!--// STANDARD LOGIN //-->
 		  <ul class="standard_login">

@@ -1,0 +1,68 @@
+<% 
+# Set up layout variables 
+@body_id = "register"
+@body_classes = "access"
+@hide_header = true;
+%>
+
+<!--// CONTAINER //-->
+<div id="container">
+	<h1><span>CompleteSet</span></h1>
+	<div id="content" class="wrapper">
+    <%= form_for @user, html: {class: "registration_form"} do |f| %>
+    
+      <% if @user.errors.any? %>
+        <% error_string = @user.errors.full_messages.join(", ") %>
+        <script>
+          //Show user errors
+          showGrowl("<%= error_string %>", "error");
+        </script>
+      <% end %>
+    
+      <h2>Sign Up With Email</h2>
+      <ul>
+      <!--// FIRST NAME //-->
+      <li class="first_name_field">
+        <span class="field">
+        <%= f.text_field :first_name, :placeholder => "First Name" %>
+        <p class="error_message"></p>
+        </span>
+      </li>
+      <!--// LAST NAME //-->
+      <li class="last_name_field">
+        <span class="field">
+        <%= f.text_field :last_name, :placeholder => "Last Name" %>
+        <p class="error_message"></p>
+        </span>
+      </li>
+      <!--// EMAIL ADDRESS //-->
+      <li class="email_address_field">
+        <span class="field">
+        <%= f.text_field :email, :placeholder => "Email Address" %>
+        <p class="error_message"></p>
+        </span>
+      </li>
+      <!--// PASSWORD //-->
+      <li class="password_field">
+        <span class="field">
+        <%= f.password_field :password, :placeholder => "Password" %>
+        <p class="error_message"></p>
+        </span>
+      </li>
+      <!--// PASSWORD CONFIRMATION //-->
+      <li class="password_field">
+        <span class="field">
+        <%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %>
+        <p class="error_message"></p>
+        </span>
+      </li>  
+      </ul>
+      <div class="form_footer">
+        <div class="form_footer_buttons">
+        <button type="submit" name="signup"><span class="ss-icon">checkmark</span>Sign Up</button>
+        </div>
+      </div>
+		<% end %>
+	</div>
+	<br class="clear" />
+</div>
