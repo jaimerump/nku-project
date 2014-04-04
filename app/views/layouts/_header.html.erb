@@ -102,7 +102,7 @@
             <li><hr></li>
             <li><a href="/settings">Settings</a></li>
             <li><a href="/curate">Curate</a></li>-->
-            <li><a href="/logout">Log Out</a></li>
+            <li><%= link_to "Log Out", logout_path %></li>
           </ul>
         </div>
       </div>
@@ -110,8 +110,12 @@
     <% else %>
     
       <div id="access_menu_container">
-        <button type="button" name="join">Join</button>
-        <button type="button" name="login">Login</button>
+        <%= link_to(new_user_path) do %>
+          <button type="button" name="join">Join</button>
+        <% end %>
+        <%= link_to( login_page_path) do %>
+          <button type="button" name="login">Login</button>
+        <% end %>
       </div>
     
     <% end %>
