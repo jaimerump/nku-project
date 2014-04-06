@@ -4,4 +4,9 @@
 @body_classes = "undock"
 %>
 
-Logged in as <%= current_user.full_name %>
+<!--// GRID //-->
+<div id="grid" class="grid">
+  <% @users.each do |user| %>
+    <%= render "templates/user", :user => user %>
+  <% end %>
+</div>

@@ -1,0 +1,15 @@
+<!--// USER GRID ENTRY //-->
+<div class="entry user">
+  <!--// DISPLAY //-->
+	<div class="display">
+		<a href="<%= user_path(user) %>" class="profile_link">
+			<img src="<%= user.image.url %>" alt="<%= user.full_name %>"
+			height="<%= user.image.height %>" width="<%= user.image.width %>" class="entry_image" />
+		</a>
+	</div>
+	<!--// DETAILS //-->
+	<div class="details">
+		<p class="name"><%= user.full_name %></p>
+		
+	</div>
+</div>
