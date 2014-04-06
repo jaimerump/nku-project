@@ -19,10 +19,10 @@ class LoginController < ApplicationController
   def login
     # Processes the login form
     
-    @user = User.find_by_email(params[:email])
+    @user = User.find_by_email(params[:user][:email])
     
     
-    if( @user && @user.authenticate( params[:password] ) )
+    if( @user && @user.authenticate( params[:user][:password] ) )
       # Log them in
       session[:user_id] = @user.id
       

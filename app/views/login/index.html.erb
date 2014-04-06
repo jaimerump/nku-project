@@ -68,7 +68,7 @@
     $.ajax({
       type: "POST",
       url: "<%= login_process_path %>",
-      data: { 'email': email, 'password': password },
+      data: { 'user': { 'email': email, 'password': password } },
       dataType: "json",
       success: function( response, status, xhr )
       { 
@@ -88,7 +88,6 @@
       error: function( xhr, status, error ){
         hideIndicator();
         showGrowl("An error occurred. Please refresh and try again.", "error");
-        console.log( xhr );
       }
     });
     

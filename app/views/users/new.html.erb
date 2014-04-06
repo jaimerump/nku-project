@@ -66,3 +66,71 @@
 	</div>
 	<br class="clear" />
 </div>
+
+<script>
+  //Page specific script
+  $(".registration_form").submit(function(){
+    //Get all of the data
+    var first = $(".registration_form #user_first_name").val();
+    var last = $(".registration_form #user_last_name").val();
+    var email = $(".registration_form #user_email").val();
+    var password = $(".registration_form #user_password").val();
+    var password_confirmation = $(".registration_form #user_password_confirmation").val();
+    
+    //Check name
+    if( isBlank( first ) || isBlank( last ) ){
+      showGrowl("You must specify your full name.", "error");
+      return false;
+    }
+    
+    //Check email
+    if( isBlank( email ) || !isEmail( email ) ){
+      showGrowl("You must provide a valid email address.", "error");
+      return false;
+    }
+    
+    //Check the password
+    if( isBlank( password ) ){
+      showGrowl('You must create a password.', "error");
+      return false;
+    }
+    else if( password != password_confirmation ){
+      showGrowl('Passwords must match.', "error");
+      return false;
+    }
+    
+    //Send everything to the back end
+    showIndicator();
+    $.ajax({
+      type: "POST",
+      url: "<%= users_path %>",
+      data: { 'user': { 'first_name': first, 
+                       'last_name':last, 
+                       'email':email, 
+                       'password':password, 
+                       'password_confirmation':password_confirmation } },
+      dataType: "json",
+      success: function( response, status, xhr )
+      { 
+        hideIndicator();
+        if( response.status == 'Success' ){
+          //They have been registered, send them on to the welcome page
+          showGrowl(response.message, "success");
+          goTo('<%= users_path %>');
+        }
+        else{
+          showGrowl( response.message, "error" );
+        }
+        
+      },
+      error: function( xhr, status, error ){
+        hideIndicator();
+        showGrowl("An error occurred. Please refresh and try again.", "error");
+      }
+    });
+  
+    return false;
+  });
+
+  
+</script>
