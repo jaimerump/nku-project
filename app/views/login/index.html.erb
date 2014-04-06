@@ -10,14 +10,14 @@
 	<h1><span>CompleteSet</span></h1>
 	<div id="content" class="wrapper">
     
-    <%= form_for( @user, as: :user, url: login_process_path, method: :post ) do |f| %>
+    <%= form_for( @user, as: :user, url: login_process_path, method: :post, html: { class: "login_form" } ) do |f| %>
       
       <h2>Log In To Collect</h2>
     
       <!--// STANDARD LOGIN //-->
 		  <ul class="standard_login">
-        <!--// USERNAME //-->
-        <li class="username_field">
+        <!--// EMAIL //-->
+        <li class="email_field">
           <span class="field">
             <%= f.text_field :email, :placeholder => "Email Address" %>
           <p class="error_message"></p>
@@ -48,3 +48,52 @@
     </div>
 	<br class="clear" />
 </div>
+
+<script>
+  //Page specific scripts
+  $(".login_form").submit(function(){
+
+    //Get info from form
+    var email = $(".login_form #user_email").val();
+    var password = $(".login_form #user_password").val();
+  
+    //Check that they're both there
+    if( isBlank( email ) || isBlank( password ) ){
+      showGrowl("Missing email or password.", 'error');
+      return false;
+    }
+    
+    //Pass on to back end
+    showIndicator();
+    $.ajax({
+      type: "POST",
+      url: "<%= login_process_path %>",
+      data: { 'email': email, 'password': password },
+      dataType: "json",
+      success: function( response, status, xhr )
+      { 
+        hideIndicator();
+        if( response.status == 'Success' ){
+          showGrowl( response.message, "success" );
+          goTo( '<%= users_path %>' );
+          
+        }
+        else{
+          showGrowl( response.message, "error" );
+          if( response.log )
+            console.log( response.log );
+        }
+        
+      },
+      error: function( xhr, status, error ){
+        hideIndicator();
+        showGrowl("An error occurred. Please refresh and try again.", "error");
+        console.log( xhr );
+      }
+    });
+    
+    return false; //Prevent page refresh
+  
+  });
+  
+</script>

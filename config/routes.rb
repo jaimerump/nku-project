@@ -5,7 +5,8 @@ NkuProject::Application.routes.draw do
   post 'login', to: "login#login", as: :login_process
   get 'logout', to: "login#logout", as: :logout
   
-  resources :users
+  resources :users do
+  end
   
   root "login#index" 
   
