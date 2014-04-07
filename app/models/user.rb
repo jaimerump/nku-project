@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
   
   has_many :images, as: :imageable
+  has_many :user_items
+  has_many :items, :through => :user_items
   
   validates :email, uniqueness: true
 
@@ -15,6 +17,14 @@ class User < ActiveRecord::Base
     else
       images.last
     end
+  end
+  
+  def haves 
+    items.where("status = ?", "have")
+  end
+ 
+   def wants 
+    items.where("status = ?", "want")
   end
   
 end

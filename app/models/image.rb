@@ -3,10 +3,12 @@ class Image < ActiveRecord::Base
   
   DEFAULT_HEIGHT = 220
   DEFAULT_WIDTH = 220
+  MEDIA_FETCH_HOST = "https://df1pcbhp0ir50.cloudfront.net"
+  ASSETS_FETCH_HOST = "https://d25m1i464od8gh.cloudfront.net"
   
   def self.user_default
     default = Image.new
-    default.url = "https://www.completeset.com/users/placeholder.png"
+    default.url = "#{MEDIA_FETCH_HOST}/users/placeholder.png"
     default.height = DEFAULT_HEIGHT
     default.width = DEFAULT_WIDTH
     default
@@ -14,7 +16,7 @@ class Image < ActiveRecord::Base
   
   def self.item_default
     default = Image.new
-    default.url = "https://df1pcbhp0ir50.cloudfront.net/items/placeholder.jpg"
+    default.url = "#{MEDIA_FETCH_HOST}/items/placeholder.jpg"
     default.height = DEFAULT_HEIGHT
     default.width = DEFAULT_WIDTH
     default
@@ -22,7 +24,7 @@ class Image < ActiveRecord::Base
   
   def self.brand_default
     default = Image.new
-    default.url = "https://www.completeset.com/brands/10002.png"
+    default.url = "#{ASSETS_FETCH_HOST}/brands/10002.png"
     default.height = DEFAULT_HEIGHT
     default.width = DEFAULT_WIDTH
     default
