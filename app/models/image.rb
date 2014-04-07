@@ -9,4 +9,11 @@ class Image < ActiveRecord::Base
     default
   end
   
+  def self.item_default
+    default = Image.new
+    default.url = "https://df1pcbhp0ir50.cloudfront.net/items/placeholder.jpg"
+    default.height = 220
+    default.width = 220
+    default
+  end
 end

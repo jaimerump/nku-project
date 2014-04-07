@@ -8,6 +8,9 @@ NkuProject::Application.routes.draw do
   resources :users do
   end
   
+  resources :items do
+  end
+  
   root "login#index" 
   
 end

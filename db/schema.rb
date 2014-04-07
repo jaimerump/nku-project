@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406162751) do
+ActiveRecord::Schema.define(version: 20140406190043) do
 
   create_table "images", force: true do |t|
     t.integer  "imageable_id"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 20140406162751) do
     t.integer  "height"
     t.integer  "width"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "name"
+    t.date     "released_on"
+    t.decimal  "original_price"
+    t.string   "gender"
+    t.string   "availability"
+    t.string   "exclusivity"
+    t.integer  "quantity"
+    t.string   "packaging_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
