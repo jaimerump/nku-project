@@ -1,5 +1,4 @@
 /* Scripts for the universal modals */
-console.log("Testing!");
 
 //Growl functions
 function showGrowl( msg, growl_class ){
@@ -23,19 +22,23 @@ function hideGrowl(growl_class){
 /*
 //Hide for now because it ugly
 //<DalekVoice> ELEVATE!!! </DalekVoice>
-$("#elevator").click(function(){
-	$('html, body').animate({scrollTop: '0px'}, 800);
-});
+$(document).ready(function(){
 
+  $("#elevator").click(function(){
+    $('html, body').animate({scrollTop: '0px'}, 800);
+  });
+  
+  
+  //Show elevator when they scroll down and hide is at top of page
+  $(window).scroll(function() {
+      if ( $(this).scrollTop() > 100 ){
+          $("#elevator").fadeIn('fast');
+      } 
+    else{
+          $("#elevator").fadeOut('fast');
+      }
+  });
 
-//Show elevator when they scroll down and hide is at top of page
-$(window).scroll(function() {
-    if ( $(this).scrollTop() > 100 ){
-        $("#elevator").fadeIn('fast');
-    } 
-	else{
-        $("#elevator").fadeOut('fast');
-    }
 });
 */
 
@@ -140,9 +143,11 @@ doesn't throw an error if undefined. */
 	
 }
 
-$("body").click(function(e){
-	if( $(e.toElement).hasClass('overlay') )
-		hideAllModals();
+$(document).ready(function(){
+  $("body").click(function(e){
+    if( $(e.toElement).hasClass('overlay') )
+      hideAllModals();
+  });
 });
 
 

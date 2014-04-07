@@ -103,7 +103,7 @@
     showIndicator();
     $.ajax({
       type: "POST",
-      url: "<%= users_path %>",
+      url: $(this).prop('action'),
       data: { 'user': { 'first_name': first, 
                        'last_name':last, 
                        'email':email, 

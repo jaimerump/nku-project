@@ -67,7 +67,7 @@
     showIndicator();
     $.ajax({
       type: "POST",
-      url: "<%= login_process_path %>",
+      url: $(this).prop('action'),
       data: { 'user': { 'email': email, 'password': password } },
       dataType: "json",
       success: function( response, status, xhr )
