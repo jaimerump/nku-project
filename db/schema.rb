@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406190043) do
+ActiveRecord::Schema.define(version: 20140407175416) do
+
+  create_table "brands", force: true do |t|
+    t.string   "name"
+    t.date     "established_on"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "images", force: true do |t|
     t.integer  "imageable_id"
@@ -34,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140406190043) do
     t.string   "packaging_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "brand_id"
   end
 
   create_table "users", force: true do |t|

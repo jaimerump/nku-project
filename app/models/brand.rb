@@ -1,11 +1,11 @@
-class Item < ActiveRecord::Base
+class Brand < ActiveRecord::Base
   
+  has_many :items
   has_many :images, as: :imageable
-  belongs_to :brand 
   
   def image
     if( images.size == 0 )
-      Image.item_default
+      Image.brand_default
     else
       images.last
     end

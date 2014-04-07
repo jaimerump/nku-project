@@ -5,5 +5,34 @@
 
 <!--// ITEM PROFILE //-->
 <div id="content" class="wrapper profile">
-  This is the temporary profile for <%= @item.name %>.
+  <!--// COLUMN A //-->
+  <div id="a">
+    <!--// TITLE //-->
+    <div id="title" class="box">
+      <div class="identity">
+        <div class="icon">
+          <a href="<%= brand_path( @item.brand.id ) %>" title="<%= @item.brand.name %>">
+            <img src="<%= @item.brand.image.url %>" alt="<%= @item.brand.name %>" /></a>
+        </div>
+        <h1><%= @item.name %></h1>
+        <h2></h2>
+      </div>
+    </div>
+    <!--// STAGE //-->
+    <div id="stage">
+      <img src="<%= @item.image.url %>" alt="<%= @item.name %>" />
+    </div>
+    <!--// INFORMATION //-->
+    <div id="information" class="box">
+			<!--// ITEM //-->
+			<span class="subtitle">Collectible Description</span>
+      <p>
+        <%= @item.name %> is a really cool <%= @item.brand.name %> item.
+      </p>
+    </div>
+  </div>
+  <!--// COLUMN B //-->
+  <div id="b">
+</div>
+  
 </div>

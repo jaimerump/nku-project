@@ -1,0 +1,19 @@
+<% 
+# Set up layout variables 
+@body_id = "profile"
+@body_classes = "brand undock"
+%>
+
+<!--// PROFILE HEADER //-->
+<div id="cover" class="outer maximized">
+  <div id="profile_header" class="inner">
+    <div id="profile_picture">
+      <img src="<%= @brand.image.url %>" class="avatar" alt="<%= @brand.name %>" />
+    </div>
+    <div id="profile_information">
+      <h1><%= @brand.name %><span class="profile_verified"></span></h1>
+      <h2>Established in <%= @brand.established_on.strftime("%Y") %></h2>
+      <span class="profile_type brand">Brand</span>
+    </div>
+  </div>
+</div>

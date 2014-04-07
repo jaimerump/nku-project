@@ -10,6 +10,9 @@ NkuProject::Application.routes.draw do
   
   resources :items do
   end
+ 
+  resources :brands do
+  end
   
   root "login#index" 
   
