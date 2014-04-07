@@ -1,0 +1,27 @@
+<!--// ITEM GRID ENTRY //-->
+<div class="entry item">
+  <!--// DISPLAY //-->
+	<div class="display">
+		<a href="<%= item_path(item) %>" class="profile_link">
+		  <img src="<%= item.image.url %>" alt="<%= item.name %>"
+			height="<%= item.image.height %>" width="<%= item.image.width %>" class="entry_image" />
+		</a>
+		<!--// ACTIONS //-->
+		<div class="actions" style="display: none;">
+			<!--// DEFAULT ACTIONS //-->
+			<ul class="default_actions">
+				<li><a href="javascript:" class="have"><span class="ss-icon">checkmark</span></a></li>
+				<li><a href="javascript:" class="want"><span class="ss-icon">heart</span></a></li>
+				<li><a href="javascript:" class="more"><span class="ss-icon">cart</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<!--// DETAILS //-->
+ 	<div class="details">
+		<p class="name"><%= item.name %></p>
+		<p class="statistics">
+			<span class="haves"><span class="ss-icon">checkmark</span>0</span>
+			<span class="wants"><span class="ss-icon">heart</span>0</span>
+		</p>
+	</div>
+</div>
