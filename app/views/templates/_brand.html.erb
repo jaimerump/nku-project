@@ -1,0 +1,15 @@
+<!--// BRAND GRID ENTRY //-->
+<div class="entry brand">
+  <!--// DISPLAY //-->
+	<div class="display">
+		<a href="<%= brand_path(brand) %>" class="profile_link">
+			<img src="<%= brand.image.url %>" alt="<%= brand.name %>"
+			height="<%= brand.image.height %>" width="<%= brand.image.width %>" class="entry_image" />
+		</a>
+	</div>
+	<!--// DETAILS //-->
+	<div class="details">
+		<p class="name"><%= brand.name %></p>
+		
+	</div>
+</div>

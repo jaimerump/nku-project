@@ -13,4 +13,12 @@ class Item < ActiveRecord::Base
     end
   end
   
-end 
+  def haves
+    users.where("status = ?", "have")
+  end
+  
+  def wants
+    users.where("status = ?", "want")
+  end
+  
+end

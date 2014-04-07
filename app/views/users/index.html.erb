@@ -4,9 +4,15 @@
 @body_classes = "undock"
 %>
 
+<p>You can also <%= link_to "see all items", items_path %> or <%= link_to "see all brands", brands_path %></p>
+
 <!--// GRID //-->
-<div id="grid" class="grid">
-  <% @users.each do |user| %>
-    <%= render "templates/user", :user => user %>
+<div class="grid">
+  <% if @users.size == 0 %>
+    <%= render "templates/empty_grid", :message => "No collectors have joined yet." %>
+  <% else %>
+    <% @users.each do |user| %>
+      <%= render "templates/user", :user => user %>
+    <% end %>
   <% end %>
 </div>

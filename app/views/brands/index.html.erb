@@ -1,0 +1,18 @@
+<% 
+# Set up layout variables 
+@body_id = "brand"
+@body_classes = "undock"
+%>
+
+<p>You can also <%= link_to "see all items", items_path %> or <%= link_to "see all users", users_path %></p>
+
+<!--// GRID //-->
+<div class="grid">
+  <% if @brands.size == 0 %>
+    <%= render "templates/empty_grid", :message => "No brands have been added yet." %>
+  <% else %>
+    <% @brands.each do |brand| %>
+      <%= render "templates/brand", :brand => brand %>
+    <% end %>
+  <% end %>
+</div>
