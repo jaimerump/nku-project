@@ -8,6 +8,14 @@ class UsersController<ApplicationController
   
   def show
     @host = User.find( params[:id] )
+    respond_to do |format|
+      format.html{ render 'show' }
+      format.json{ 
+        @host.password_digest = ""
+        render json: @host
+      }
+    end
+      
   end
   
   # Create
