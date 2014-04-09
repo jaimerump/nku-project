@@ -13,12 +13,21 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
  
-  private
- 
   def require_login
     if current_user == nil
-      flash[:error] = "You must be logged in to access this section"
-      redirect_to login_page_path # halts request cycle
+      respond_to do |format|
+        format.html{
+          flash[:error] = "You must be logged in to access this section"
+          redirect_to login_page_path # halts request cycle
+        }
+        format.json{
+          response = Hash.new
+          response['message'] = "You must be logged in to perform this action"
+          response['status'] = "Error"
+          render json: response
+        }
+      end
+      
     end
   end
   

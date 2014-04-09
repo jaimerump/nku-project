@@ -12,7 +12,5 @@ class ItemsController<ApplicationController
       format.html{ render "show" }
       format.json{ render json: @item }
     end
-    
-  end
   
 end
