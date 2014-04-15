@@ -9,6 +9,7 @@ NkuProject::Application.routes.draw do
   end
   
   resources :items do
+    post 'item/change_status', to: "items#change_status", as: :change_status
   end
  
   resources :brands do

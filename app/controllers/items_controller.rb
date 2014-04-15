@@ -1,6 +1,6 @@
 class ItemsController<ApplicationController
 
-  skip_before_action :require_login
+  skip_before_action :require_login, except: :change_status 
   
   def index
     @items = Item.all
@@ -12,5 +12,7 @@ class ItemsController<ApplicationController
       format.html{ render "show" }
       format.json{ render json: @item }
     end
+    
+  end
   
-end
+end 

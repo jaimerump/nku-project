@@ -1,53 +1,5 @@
-<!--// Item Modals //-->
-
-<!--// HAVE MODAL //-->
-<div id="have" class="overlay" style="display: none">
-  <div class="modal" style="display: block;">
-    
-    <header class="title">
-      Have It
-      <a href="javascript:" class="close ss-icon">delete</a>
-    </header>
-    <section class="content">
-      <ul class="form">
-        <li>Normally there would be stuff in here that you can edit, but I haven't implemented that yet.</li>
-      </ul>
-    </section>
-    <footer class="actions">
-      <button type="button" name="unhave"><span class="ss-icon">delete</span>Unhave</button>
-      <button type="submit" name="save_have"><span class="ss-icon">heart</span>Save Have</button>
-    </footer>
-    
-  </div>
-</div>
-
-<!--// WANT MODAL //-->
-<div id="want" class="overlay" style="display: none">
-  <div class="modal" style="display: block;">
-    
-    <header class="title">
-      Want It
-      <a href="javascript:" class="close ss-icon">delete</a>
-    </header>
-    <section class="content">
-      <ul class="form">
-        <li>Normally there would be stuff in here that you can edit, but I haven't implemented that yet.</li>
-      </ul>
-    </section>
-    <footer class="actions">
-      <button type="button" name="unwant"><span class="ss-icon">delete</span>Unwant</button>
-      <button type="submit" name="save_want"><span class="ss-icon">heart</span>Save Want</button>
-    </footer>
-    
-  </div>
-</div>
-
-<script>
-/* 
-Item-specific Javascript
-I put it here because I can't use path helpers in assets.
-*/
-
+/* Item-specific Javascript */
+/*
 var item_id;
 
 // Have code
@@ -63,19 +15,6 @@ $(document).on("click", ".item.entry .want", null, function(){
 });
 
 // Neutral code
-$(document).on("mouseover", ".item.entry", null, function(){
-  $(this).find(".actions").show();
-});
-  
-$(document).on("mouseout", ".item.entry", null, function(){
-  $(this).find(".actions").hide();
-});
-  
-$("#have .close, #want .close").click(function(){
-  hideStatusModal('have');
-  hideStatusModal('want');
-});
-  
 function showStatusModal(status){
   $("#"+status).show();
 }
@@ -96,7 +35,7 @@ function processStatusModal(modal, new_status){
   showIndicator();
   $.ajax({
     type: "POST",
-    url: "<%= login_page_path %>",
+    url: ,
     data: { 'item_id':item_id, 'new_status':new_status },
          dataType: "json",
          success: function( response, status, xhr )
@@ -145,5 +84,4 @@ function updateItemIcons(new_status){
     $want_button.removeClass(selected_class);
   }
   
-}
-</script>
+}*/

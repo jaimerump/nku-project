@@ -93,11 +93,9 @@ doesn't throw an error if undefined. */
 	if( isFunction( 'hideRequestInvite' ) ){
 		hideRequestInvite();
 	}
-	if( isFunction( 'hideWantItem' ) ){
-		hideWantItem();
-	}
-	if( isFunction( 'hideHaveItem' ) ){
-		hideHaveItem();
+	if( isFunction( 'hideStatusModal' ) ){
+		hideStatusModal('have');
+    hideStatusModal('want');
 	}
 	if( isFunction('hideMessageModal') ){
 		hideMessageModal();

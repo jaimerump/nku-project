@@ -4,6 +4,8 @@
 @body_classes = "undock"
 %>
 
+<%= render 'layouts/item_modals' %>
+
 <p>You can also <%= link_to "see all brands", brands_path %> or <%= link_to "see all users", users_path %></p>
 
 <!--// GRID //-->
@@ -15,4 +17,4 @@
       <%= render "templates/item", :item => item %>
     <% end %>
   <% end %>
-</div>
+</div> 
