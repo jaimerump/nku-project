@@ -55,11 +55,27 @@ $(document).on("click", ".item.entry .have", null, function(){
   item_id = $(this).closest(".item.entry").prop("id");
   showStatusModal('have');
 });
+  
+$("#have [name='save_have']").click(function(){
+  processStatusModal('have', 'have');
+});
+  
+$("#have [name='unhave']").click(function(){
+  processStatusModal('have', 'unhave');
+});
 
 // Want code
 $(document).on("click", ".item.entry .want", null, function(){
   item_id = $(this).closest(".item.entry").prop("id");
   showStatusModal('want');
+});
+  
+$("#want [name='save_want']").click(function(){
+  processStatusModal('want', 'want');
+});
+  
+$("#want [name='unwant']").click(function(){
+  processStatusModal('want', 'unwant');
 });
 
 // Neutral code
@@ -96,7 +112,7 @@ function processStatusModal(modal, new_status){
   showIndicator();
   $.ajax({
     type: "POST",
-    url: "<%= login_page_path %>",
+    url: "<%= item_change_status_path %>",
     data: { 'item_id':item_id, 'new_status':new_status },
          dataType: "json",
          success: function( response, status, xhr )
