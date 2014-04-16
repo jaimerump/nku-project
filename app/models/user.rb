@@ -20,11 +20,19 @@ class User < ActiveRecord::Base
   end
   
   def haves 
-    items.where("status = ?", "have")
+    items.where(:user_items => { status: "have" } )
   end
  
-   def wants 
-    items.where("status = ?", "want")
+  def wants 
+    items.where(:user_items => { status: "want" } )
+  end
+  
+  def has_item(item_id)
+    !user_items.where(status: "have", item_id: item_id).empty?
+  end
+  
+  def wants_item(item_id)
+    !user_items.where(status: "want", item_id: item_id).empty?
   end
   
 end

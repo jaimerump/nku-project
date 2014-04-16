@@ -14,11 +14,11 @@ class Item < ActiveRecord::Base
   end
   
   def haves
-    users.where("status = ?", "have")
+    users.where(:user_items => { status: "have" } )
   end
   
   def wants
-    users.where("status = ?", "want")
+    users.where(:user_items => { status: "want" } )
   end
   
 end
