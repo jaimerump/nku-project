@@ -65,3 +65,4 @@ Testing Steps:
 5. You can click into an item entry to view that item's profile, which gives more information about the item
 6. Click the checkmark on an item entry to indicate that you have that item
 7. Click the heart on an item entry to indicate that you're missing the item and want it
+8. If you use a tool like Postman to send a request to http://rumpj2-72842.use1.nitrousbox.com/users/1, /brands/1, or /items/1 asking for a JSON response, you'll receive a JSON representation of that object. This is the beginning of a REST API.
