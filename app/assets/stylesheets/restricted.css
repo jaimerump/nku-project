@@ -1,0 +1,559 @@
+/**** COPYRIGHT 2014 COMPLETESET, LLC ****/
+/**** VERSION: BETA ****/
+
+/* !RESTRICTED (CURATE, MANAGE, CTRL) */
+
+/* Structures all restricted pages. */
+body.restricted div#container div#main {left: 0px; padding-top: 50px; width: 100%;}
+
+/* Adjusts the header on all restricted pages. */
+body.restricted div#container div#main header#green {border: none; padding: 6px 7px 6px 7px;}
+body.restricted div#container div#main header#green div.left div#hamburger_menu_container {left: 10px;}
+body.restricted div#container div#main header#green div.left div#hamburger_menu_container span.caret {left: 12px;}
+body.restricted div#container div#main header#green div.right div#user_menu_container {right: 10px;}
+body.restricted div#container div#main header#green a#completeset {margin: 5px 0px 0px 0px;}
+
+body.restricted div#container div#main header#green div.left div.search form input {width: 165px;}
+
+/* Adjusts the dock on all restricted pages. */
+body.restricted div#container div#dock {display: none;}
+
+
+/*//////////////////////////////////////////////////*/
+/*//////////////////////////////////////////////////*/
+
+/* !LAYOUT */
+
+/* Styles the navigation on all restricted pages. */
+body.restricted div#container div#main div#areas {
+background: #222222; /* Old browsers */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIyNSUiIHN0b3AtY29sb3I9IiMyMjIyMjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMTExMTExIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background: -moz-linear-gradient(left,  #222222 25%, #111111 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(25%,#222222), color-stop(100%,#111111)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #222222 25%,#111111 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #222222 25%,#111111 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #222222 25%,#111111 100%); /* IE10+ */
+background: linear-gradient(to right,  #222222 25%,#111111 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#111111',GradientType=1 ); /* IE6-8 */
+float: left;
+height: 100%;
+padding: 25px 0px 0px 0px;
+position: fixed;
+width: 225px;
+}
+
+body.restricted div#container div#main div#areas ul {
+list-style-type: none;
+width: 100%;
+}
+
+body.restricted div#container div#main div#areas ul li {
+border-bottom: 1px solid #292929;
+}
+
+body.restricted div#container div#main div#areas ul li:last-child {border: none;}
+
+body.restricted div#container div#main div#areas ul li a {
+color: #4D4D4D;
+cursor: pointer;
+display: block;
+font-family: "Helvetica", "Arial", sans-serif;
+font-size: 1em;
+font-weight: bold;
+padding: 12px 12px 12px 12px;
+text-rendering: optimizeLegibility;
+transition: none;
+}
+
+body.restricted div#container div#main div#areas ul li a:hover {color: #6C6C6C;}
+
+body.restricted div#container div#main div#areas ul li a span.ss-icon {font-size: .75em; top: 0px;}
+
+body.restricted div#container div#main div#areas ul li.selected a {background: #6147a5; color: #FFFFFF;}
+
+/* For the right side frame container DIV. */
+body.restricted div#container div#main div#frame {
+bottom: 0;
+float: right;
+height: 100%;
+padding: 35px 225px 0px 0px;
+left: 225px;
+position: absolute;
+right: 0;
+top: 0;
+width: 100%;
+}
+
+/* Styles the content container DIV inside the frame. */
+body.restricted div#container div#main div#frame div#content.wrapper {
+border: 0;
+border-radius: 0px;
+padding: 25px;
+max-width: 100%;
+width: 100%;
+}
+
+/*//////////////////////////////////////////////////*/
+/*//////////////////////////////////////////////////*/
+
+/* !FORMS */
+
+/* Styles the form headers. */
+body.restricted div#container div#main div#frame div#content.wrapper form h3 {
+color: #66CC66;
+font-size: 1.25em;
+font-weight: 400;
+margin: 36px 0px 12px 12px;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper form h4 {
+color: #999999;
+font-size: 1em;
+font-weight: 400;
+margin: 12px 0px 12px 12px;
+}
+
+/* Styles the form fields. */
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset {
+border-top: 1px solid #EEEEEE;
+padding: 12px;
+position: relative;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset div.inputs {float: left;}
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset div.inputs.top {}
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset div.inputs.bottom {margin: 8px 0px 0px 0px;}
+
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset div.inputs ul {
+margin: -9px 0px 0px 0px;
+list-style-type: none;
+max-width: 65%;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset div.inputs ul li {
+margin: 9px 6px 0px 0px;
+float: left;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset span.field {float: left;}
+
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset span.field input {width: 250px;}
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset span.field select {width: 250px !important;}
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset span.field textarea {width: 450px;}
+
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset span.field input.date.month {margin: 0px 1px 0px 0px; max-width: 100px;}
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset span.field input.date.day {margin: 0px 1px 0px 0px; max-width: 100px;}
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset span.field input.date.year {margin: 0px 0px 0px 0px; max-width: 115px;}
+
+body.restricted div#container div#main div#content.wrapper form#curate fieldset span.note {
+color: #CCCCCC;
+cursor: default;
+display: inline-block;
+float: left;
+font-family: "myriad-pro", sans-serif;
+font-size: 1em;
+font-weight: 500;
+margin: 0px 0px 0px 12px;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset.input span.note {padding: 18px 0px 0px 0px;}
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset.select span.note {padding: 15px 0px 0px 0px;}
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset.textarea span.note {padding: 12px 0px 0px 0px;}
+
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset span.note a {
+border-bottom: 1px dotted #DDDDDD;
+color: #66CC66;
+padding: 0px 0px 2px 0px;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper form#curate fieldset span.note a:hover {
+border-bottom: 1px solid #DDDDDD;
+color: #999999;
+padding: 0px 0px 2px 0px;
+}
+
+/* Styles the icons for form field validation. */
+body.restricted div#container div#main div#frame div#content.wrapper form fieldset span.validation {
+background: #DDDDDD;
+border-radius: 3px;
+color: #FFFFFF;
+cursor: default;
+display: block;
+font-size: 10px;
+height: 20px;
+line-height: 20px;
+margin: -10px 0px 0px 0px;
+padding: 1px 0px 0px 0px;
+position: absolute;
+right: 0px;
+text-align: center;
+top: 50%;
+width: 20px;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper form fieldset span.validation.failure {background: #EC547F;}
+body.restricted div#container div#main div#frame div#content.wrapper form fieldset span.validation.success {background: #66CC66;}
+
+body.restricted div#container div#main div#frame div#content.wrapper form fieldset#buttons {border: none; text-align: right;}
+
+body.restricted div#container div#main div#frame div#content.wrapper form fieldset#buttons button.delete {background: #EC547F; float: left;}
+body.restricted div#container div#main div#frame div#content.wrapper form fieldset#buttons button.delete:hover {background: #EC547F;}
+
+/*//////////////////////////////////////////////////*/
+/*//////////////////////////////////////////////////*/
+
+/* !CURATE */
+
+/* This is where the CSS to style "Curate" pages will be. */
+
+body#curate div#container div#main div#areas ul li#add {
+padding: 12px 12px 12px 12px;
+}
+
+body#curate div#container div#main div#areas ul li#add a {
+background: #66CC66;
+border-radius: 3px;
+color: #FFFFFF;
+cursor: pointer;
+display: block;
+font-family: "proxima-nova", sans-serif;
+font-size: .75em;
+font-weight: 600;
+letter-spacing: 1px;
+padding: 1.25em 1.4em;
+text-align: center;
+text-rendering: optimizeLegibility;
+text-transform: uppercase;
+-webkit-font-smoothing: subpixel-antialiased;
+}
+
+body#curate div#container div#main div#areas ul li#add a:hover {}
+
+body#curate div#container div#main div#areas ul li#add a span.ss-icon {padding: 0px 5px 0px 0px;}
+
+/* Styles by "Overview" list. */
+body.restricted div#container div#main div#frame div#content.wrapper div#overview ul {margin: 0px 25px;}
+
+/* Styles the data class tables. */
+body.restricted.tabular div#container div#main div#frame div#content.wrapper {
+height: 100%;
+padding: 50px 0px 0px 0px;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table {
+cursor: default;
+list-style-type: none;
+text-rendering: optimizeLegibility;
+width: 100%;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li {
+display: list-item;
+height: 42px;
+margin: 0px;
+width: 100%;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.dark {background-color: #F8F8F8;}
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.light {background-color: #FFFFFF;}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.dark:hover,
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.light:hover {
+background-color: #f0faf0;
+cursor: pointer;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul#invites.table li.row.dark:hover,
+body.restricted div#container div#main div#frame div#content.wrapper ul#invites.table li.row.light:hover {
+cursor: default;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.loader {
+background-color: #FFFFFF;
+background-image: url(../gif/indicator.squares.gif);
+background-position: center center;
+background-repeat: no-repeat;
+background-size: 43px 11px;
+border-top: 1px solid #E6E6E6;
+border-bottom: 0px;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.dark.loader:hover, 
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.light.loader:hover {
+background-color: #FFFFFF;
+cursor: default;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell {
+border-right: 1px solid #E6E6E6;
+color: #999999;
+display: block;
+font-family: "Helvetica", "Arial", sans-serif;
+font-size: 14px;
+font-weight: bold;
+float: left;
+height: 100%;
+line-height: 42px;
+margin: 0px;
+overflow: hidden;
+padding: 0px 10px 0px 10px;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.header div.cell {
+border-bottom: 1px solid #E6E6E6;
+border-right: 0;
+color: #66CC66;
+font-family: "proxima-nova", sans-serif;
+font-size: .80em;
+font-weight: 600;
+padding-top: 8px;
+text-transform: uppercase;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.header div.cell a.sort {color: #66CC66;}
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.header div.cell a.sort:hover {color: #6C6C6C;}
+
+/* For the search row. */
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.search {
+border-bottom: 1px solid #E6E6E6;
+height: 48px;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.search div.cell {padding: 0px;}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.search div.cell.input {width: 100%;}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.search div.cell.input input {
+border: none;
+color: #6C6C6C;
+height: 48px;
+font-family: "Helvetica", "Arial", sans-serif;
+font-size: 1.25em;
+font-weight: normal;
+margin: 0px;
+line-height: 40px;
+padding: 0px 12px;
+width: 100%;
+}
+
+/* For the "Contributions" table columns. */ 
+body.restricted div#container div#main div#frame div#content.wrapper ul#contributions.table li div.cell.name {width: 30% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#contributions.table li div.cell.user {width: 20% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#contributions.table li div.cell.brand {width: 25% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#contributions.table li div.cell.category {width: 15% !important;}
+
+/* For the "Freebies" table columns. */ 
+body.restricted div#container div#main div#frame div#content.wrapper ul#freebies.table li div.cell.user {width: 15% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#freebies.table li div.cell.stickers {width: 10% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#freebies.table li div.cell.pins {width: 10% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#freebies.table li div.cell.address {width: 45% !important;}
+
+/* For the "Series" table columns. */ 
+body.restricted div#container div#main div#frame div#content.wrapper ul#series.table li div.cell.series {width: 30% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#series.table li div.cell.brand {width: 30% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#series.table li div.cell.items {text-align: center; width: 20% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#series.table li div.cell.categories {border-right: 0; text-align: center; width: 20% !important;}
+
+/* For the "Sets" table columns. */ 
+body.restricted div#container div#main div#frame div#content.wrapper ul#sets.table li div.cell.set {width: 30% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#sets.table li div.cell.brand {width: 30% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#sets.table li div.cell.items {text-align: center; width: 20% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#sets.table li div.cell.categories {border-right: 0; text-align: center; width: 20% !important;}
+
+/* For the "Manufacturers" table columns. */ 
+body.restricted div#container div#main div#frame div#content.wrapper ul#manufacturers.table li div.cell.manufacturer {width: 30% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#manufacturers.table li div.cell.brands {text-align: center; width: 10% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#manufacturers.table li div.cell.items {text-align: center; width: 15% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#manufacturers.table li div.cell.listings {text-align: center; width: 15% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#manufacturers.table li div.cell.transactions {text-align: center; width: 15% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#manufacturers.table li div.cell.categories {text-align: center; width: 15% !important;}
+
+/* For the "Curated" table columns. */ 
+body.restricted div#container div#main div#frame div#content.wrapper ul#curated.table li div.cell.name {width: 35% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#curated.table li div.cell.manufacturer {width: 30% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#curated.table li div.cell.date {width: 15% !important;}
+
+/* For the "Invites" table columns. */ 
+body.restricted div#container div#main div#frame div#content.wrapper ul#invites.table li div.cell.email {width: 30% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#invites.table li div.cell.sender {width: 30% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#invites.table li div.cell.date {width: 20% !important;}
+
+/* For the "Users" table columns. */ 
+body.restricted div#container div#main div#frame div#content.wrapper ul#users.table li div.cell.name {width: 30% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#users.table li div.cell.country {width: 25% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#users.table li div.cell.datetime {width: 25% !important;}
+
+/* For the "Listings" table columns. */ 
+body.restricted div#container div#main div#frame div#content.wrapper ul#listings.table li div.cell.id {width: 10% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#listings.table li div.cell.seller {width: 25% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#listings.table li div.cell.buyer {width: 25% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#listings.table li div.cell.date {width: 20% !important;}
+
+/* For the "Transactions" table columns. */ 
+body.restricted div#container div#main div#frame div#content.wrapper ul#transactions.table li div.cell.id {width: 10% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#transactions.table li div.cell.seller {width: 25% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#transactions.table li div.cell.buyer {width: 25% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#transactions.table li div.cell.date {width: 20% !important;}
+body.restricted div#container div#main div#frame div#content.wrapper ul#transactions.table li div.cell.total {width: 10% !important;}
+
+/* For the status column. */
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status {text-align: center; width: 10%;}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status span {padding: 0px;}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status.active, 
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status.approved, 
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status.complete, 
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status.sold, 
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status span.published {
+color: #66CC66;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status.pending,
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status.unpaid {
+color: #6147A5;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status.declined, 
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status.ended, 
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status.suspended, 
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status.cancelled {
+color: #EC547F;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.status.incomplete {color: #00BCF2;}
+
+/* For the actions column. */
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li div.cell.actions {
+float: right;
+text-align: center;
+width: 10%;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row div.cell.actions a {
+color: #999999;
+display: inline-block;
+padding: 0px;
+text-align: center;
+width: 24px;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row div.cell.actions a:hover {color: #66CC66;}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row div.cell.actions a.active {color: #66CC66;}
+
+/* Styles an expanded row for more detail. */
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.collapsed {display: none;}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded {
+background-color: #f0faf0;
+border-top: 1px solid #E6E6E6;
+border-bottom: 1px solid #E6E6E6;
+display: inline-block;
+cursor: default;
+height: auto;
+padding: 20px;
+position: relative;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.close {
+height: 25px;
+text-align: right;
+width: 100%;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.close a {color: #6C6C6C;}
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.close a:hover {color: #66CC66;}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.details {height: auto; width: 100%;}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.details div.a {
+display: inline-block;
+float: left;
+width: 50%;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.details div.b {
+display: inline-block;
+float: left;
+width: 50%;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.details ul  {
+cursor: default;
+list-style-type: none;
+margin: 0px auto;
+text-rendering: optimizeLegibility;
+width: 90%;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.details ul li.line {
+border-bottom: 1px dotted #c7e5c7;
+display: inline-block;
+height: auto;
+margin: 0px;
+padding: 10px 0px;
+width: 100%;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.details ul li.line label {
+color: #6C6C6C;
+float: left;
+font-size: 11px;
+font-weight: bold;
+overflow: hidden;
+text-overflow: ellipsis;
+text-transform: uppercase;
+width: 100%;
+word-wrap: none;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.details ul li.line div {
+clear: left;
+color: #66CC66;
+display: block;
+height: auto;
+float: left;
+font-size: 1.25em;
+font-weight: normal;
+line-height: 1.25em;
+margin: 10px 0px 0px 0px;
+overflow: hidden;
+text-overflow: ellipsis;
+text-align: left;
+width: 100%;
+word-wrap: none;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.details ul li.line div span.total {
+border-top: 2px solid #66CC66;
+display: inline-block;
+font-weight: bold;
+margin-top: 3px;
+padding-top: 3px;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.details ul li.line div a {
+border-bottom: 2px solid #66CC66;
+color: #66CC66;
+display: inline-block;
+padding-bottom: 2px;
+}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.details ul li.line div a:hover {color: #66CC66;}
+
+body.restricted div#container div#main div#frame div#content.wrapper ul.table li.row.expanded div.details ul li.line div input {width: 100%;}
+
+
+/*//////////////////////////////////////////////////*/
+/*//////////////////////////////////////////////////*/
+
+/* !MANAGE */
+
+/* This is where the CSS to style "Manage" pages will be. */
+
+
+
+/**** HE WHO DIES WITH THE MOST TOYS WINS ****/

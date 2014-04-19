@@ -1,0 +1,102 @@
+<%= form_for(@item, multipart: true, html: {id: 'curate'}) do |f| %>
+
+  <% if @item.errors.any? %>
+    <% error_string = @item.errors.full_messages.join(", ") %>
+    <script>
+      //Show user errors
+      showGrowl("<%= error_string %>", "error");
+    </script>
+  <% end %>
+
+  <!--// VITALS //-->
+  <h3>Vitals</h3>
+  <h4>This is the most important information we need to curate.</h4>
+  <!--// BRAND //-->
+  <fieldset class="select">
+    <span class="field">
+      <%= f.select(:brand_id, Brand.all.collect {|b| [b.name, b.id] } ) %>
+    </span>
+    <span class="note">What <a href="#">brand</a> was the collectible made for?</span>
+    <span class="validation ss-icon">checkmark</span>
+  </fieldset>
+  <!--// NAME //-->
+  <fieldset class="input">
+    <span class="field">
+      <%= f.text_field :name, :placeholder => "Name" %>
+    </span>
+    <span class="note">What is the <a href="#">name</a> of the item?</span>
+    <span class="validation ss-icon">checkmark</span>
+  </fieldset>
+  <!--// RELEASE DATE //-->
+  <fieldset class="input">
+    <span class="field">
+      <%= f.date_select(:released_on, include_blank: true, start_year: 1900 ) %>
+    </span>
+    <span class="note">When was the item <a href="#">released</a>?</span>
+    <span class="validation ss-icon">checkmark</span>
+  </fieldset>
+  <!--// ORIGINAL PRICE //-->
+  <fieldset id="original_price" class="input">
+    <span class="field">
+      <%= f.text_field :original_price, :placeholder => "USD ($)" %>
+    </span>
+    <span class="note">What was the <a href="#">original price</a> of the item?</span>
+    <span class="validation ss-icon">checkmark</span>
+  </fieldset>
+  <!--// EXCLUSIVITY //-->
+  <fieldset id="exclusivity" class="select">
+    <span class="field">
+      <%= f.select(:exclusivity, Item.exclusivities.collect{|s| [ s[0].titleize, s[0] ]} ) %>
+    </span>
+    <span class="note">How <a href="#">exclusive</a> is the item?</span>
+    <span class="validation ss-icon">checkmark</span>
+  </fieldset>
+  <!--// AVAILABILITY //-->
+  <fieldset id="availability" class="select">
+    <span class="field">
+      <%= f.select(:availability, Item.availabilities.collect{|s| [ s[0].titleize, s[0] ]} ) %>
+    </span>
+    <span class="note">How <a href="#">available</a> is the item?</span>
+    <span class="validation ss-icon">checkmark</span>
+  </fieldset>
+  
+  <!--// PACKAGING //-->
+  <fieldset id="packaging" class="select">
+    <div class="inputs">
+      <% Item.packaging_types.each do |type| %>
+        <% 
+          type_lower = type[0].downcase
+        %>
+        <input type="radio" name="item[packaging_type]" id="packaging_<%= type_lower %>" value="<%= type_lower %>" />
+        <label for="packaging_<%= type_lower %>" class="input"><span class="ss-icon">checkmark</span><%= type[0] %></label>
+      <% end %>
+    </div>
+    <span class="note">What type of <a href="#">packaging</a> was it sold in?</span>
+    <span class="validation ss-icon">checkmark</span>
+  </fieldset>
+  
+  
+  
+  <!--// GENDER & SIZE //-->
+  <h3>Gender &amp; Sizes</h3>
+  <h4>Provide information about the gender and size options of this item.</h4>
+  <!--// GENDER //-->
+  <fieldset class="select">
+    <span class="field">
+      <%= f.select(:gender, Item.genders.collect{|s| [ s[0].titleize, s[0] ]} ) %>
+    </span>
+    <span class="note">What <a href="#">gender</a> was the item made for?</span>
+    <span class="validation ss-icon">checkmark</span>
+  </fieldset>
+ 
+  
+  
+  
+  <!--// BUTTONS //-->
+  <fieldset id="buttons">
+    <button type="button" class="cancel"><span class="ss-icon">ban</span>Cancel</button>
+    <button type="button" class="delete" style="display:none;"><span class="ss-icon">delete</span>Delete</button>
+    <button type="button" class="save_clear"><span class="ss-icon">checkmark</span>Save & Clear</button>
+    <button type="submit"><span class="ss-icon">checkmark</span>Save & Add Similar</button>
+  </fieldset>
+<% end %>

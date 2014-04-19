@@ -1,6 +1,6 @@
 class ItemsController<ApplicationController
 
-  skip_before_action :require_login, except: :change_status 
+  skip_before_action :require_login, only: [:index,:show,:new] 
   
   def index
     @items = Item.all
@@ -13,6 +13,38 @@ class ItemsController<ApplicationController
       format.json{ render json: @item }
     end
     
+  end
+  
+  def new
+    @item = Item.new
+  end
+  
+  def create
+    @item = Item.new(item_params)
+    if @item.save
+      respond_to do |format|
+        format.html{ redirect_to items_path }
+        format.json{
+          response = Hash.new
+          response[:status] = "Success"
+          response[:message] = "The item has been created!"
+          render json: response
+        }
+      end
+      
+    else
+      respond_to do |format|
+        format.html{ render 'new' }
+        format.json{
+          response = Hash.new
+          response[:status] = "Error"
+          response[:message] = "#{@item.errors.full_messages.join(", ")}"
+          render json: response
+        }
+      end
+      
+    end
+  
   end
   
   def change_status
@@ -109,4 +141,10 @@ class ItemsController<ApplicationController
     
   end 
   
+  private 
+  
+  def item_params
+    params.require(:item).permit!
+  end
+
 end 

@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
     end
   end
   
+  # Have/want functions
+  
   def haves 
     items.where(:user_items => { status: "have" } )
   end
