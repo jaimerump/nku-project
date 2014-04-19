@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407193122) do
+ActiveRecord::Schema.define(version: 20140419162550) do
 
   create_table "brands", force: true do |t|
     t.string   "name"
@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(version: 20140407193122) do
     t.string   "name"
     t.date     "released_on"
     t.decimal  "original_price"
-    t.string   "gender"
-    t.string   "availability"
-    t.string   "exclusivity"
+    t.integer  "gender",         limit: 255, default: 0
+    t.integer  "availability",   limit: 255, default: 0
+    t.integer  "exclusivity",    limit: 255, default: 0
     t.integer  "quantity"
-    t.string   "packaging_type"
+    t.integer  "packaging_type", limit: 255, default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "brand_id"
