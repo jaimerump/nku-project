@@ -46,6 +46,10 @@ class ItemsController<ApplicationController
     end
   
   end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
   
   def change_status
     # Allows the logged in user to have, want, unhave, or unwant an item

@@ -88,15 +88,65 @@
     <span class="note">What <a href="#">gender</a> was the item made for?</span>
     <span class="validation ss-icon">checkmark</span>
   </fieldset>
- 
+  
   
   
   
   <!--// BUTTONS //-->
   <fieldset id="buttons">
-    <button type="button" class="cancel"><span class="ss-icon">ban</span>Cancel</button>
-    <button type="button" class="delete" style="display:none;"><span class="ss-icon">delete</span>Delete</button>
-    <button type="button" class="save_clear"><span class="ss-icon">checkmark</span>Save & Clear</button>
-    <button type="submit"><span class="ss-icon">checkmark</span>Save & Add Similar</button>
+    <%= link_to(items_path) do %>
+      <button type="button" class="cancel"><span class="ss-icon">ban</span>Cancel</button>
+    <% end %>
+    <% if !@item.new_record?  %>
+      <%= link_to(item_path(@item), method: :delete) do %>
+        <button type="button" class="delete"><span class="ss-icon">delete</span>Delete</button>
+      <% end %>
+    <% end %>
+    <button type="submit"><span class="ss-icon">checkmark</span>Save</button>
   </fieldset>
 <% end %>
+
+<script>
+  //Curate form submission
+  $("form#curate").submit(function(){
+    //Validations
+    var name = $(this).find("[name='item[name]']").val();
+    
+    if( isBlank(name) ){
+      showGrowl("You must specify a name.",'error');
+      return false;
+    }
+    
+    //Pass on to back end
+    showIndicator();
+    $.ajax({
+      type: $(this).prop('method'),
+      url: $(this).prop('action'),
+      data: new FormData($(this)[0]),
+      processData: false,
+		  contentType: false,
+      dataType: "json",
+      success: function( response, status, xhr )
+      { 
+        hideIndicator();
+        if( response.status == 'Success' ){
+          showGrowl( response.message, "success" );
+          
+        }
+        else{
+          showGrowl( response.message, "error" );
+          if( response.log )
+            console.log( response.log );
+        }
+        return false;
+      },
+      error: function( xhr, status, error ){
+        hideIndicator();
+        showGrowl("An error occurred. Please refresh and try again.", "error");
+        return false;
+      }
+    });
+    
+    return false;
+  });
+</script>
