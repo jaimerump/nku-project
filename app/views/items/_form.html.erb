@@ -107,6 +107,14 @@
 <% end %>
 
 <script>
+  
+  <% if(!@item.new_record?) %>
+    //Populate curate form
+    <% if( @item.packaging_type ) %>
+      $("#packaging_<%= @item.packaging_type %>").prop("checked", true);
+    <% end %>
+  <% end %>
+  
   //Curate form submission
   $("form#curate").submit(function(){
     //Validations

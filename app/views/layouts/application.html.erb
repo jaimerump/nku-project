@@ -28,8 +28,15 @@
   
   <% if( flash[:error] ) %>
     <script>
-      //Horribly hacky script to display growls until I figure out ajax
+      //Horribly hacky script to display growls
       showGrowl( '<%= flash[:error] %>','error');
+    </script>
+  <% end %>
+  
+  <% if( flash[:notice] ) %>
+    <script>
+      //Horribly hacky script to display growls
+      showGrowl( '<%= flash[:notice] %>','success');
     </script>
   <% end %>
   

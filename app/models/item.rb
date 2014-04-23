@@ -10,6 +10,9 @@ class Item < ActiveRecord::Base
   enum gender: [:neutral, :both, :female, :male, :unisex] 
   enum packaging_type: [:unknown, :no_packaging, :bagged, :boxed, :carded, :cased, :tubed]
   
+  validates :name, presence:
+  validates :brand_id, presence:
+  
   def image
     if( images.size == 0 )
       Image.item_default

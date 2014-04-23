@@ -1,6 +1,6 @@
 class ItemsController<ApplicationController
 
-  skip_before_action :require_login, only: [:index,:show,:new] 
+  skip_before_action :require_login, only: [:index,:show] 
   
   def index
     @items = Item.all
@@ -51,6 +51,40 @@ class ItemsController<ApplicationController
     @item = Item.find(params[:id])
   end
   
+  def update
+    @item = Item.find(params[:id])
+    
+    if @item.update(item_params)
+      respond_to do |format|
+        format.html{ redirect_to items_path }
+        format.json{
+          response = Hash.new
+          response[:status] = "Success"
+          response[:message] = "The item has been updated!"
+          render json: response
+        }
+      end
+      
+    else
+      respond_to do |format|
+        format.html{ render 'new' }
+        format.json{
+          response = Hash.new
+          response[:status] = "Error"
+          response[:message] = "#{@item.errors.full_messages.join(", ")}"
+          render json: response
+        }
+      end
+    end
+    
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path, notice: "The item has been deleted"    
+  end
+
   def change_status
     # Allows the logged in user to have, want, unhave, or unwant an item
     
