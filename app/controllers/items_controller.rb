@@ -17,11 +17,17 @@ class ItemsController<ApplicationController
   
   def new
     @item = Item.new
+    @item.images.new
   end
   
   def create
     @item = Item.new(item_params)
     if @item.save
+      # Move images and update db
+      @item.images.each do |image|
+        image.move_and_update
+      end
+      
       respond_to do |format|
         format.html{ redirect_to items_path }
         format.json{
@@ -49,12 +55,18 @@ class ItemsController<ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @item.images.new
   end
   
   def update
     @item = Item.find(params[:id])
     
     if @item.update(item_params)
+      # Move images and update db
+      @item.images.each do |image|
+        image.move_and_update
+      end
+      
       respond_to do |format|
         format.html{ redirect_to items_path }
         format.json{

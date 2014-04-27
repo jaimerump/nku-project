@@ -1,11 +1,13 @@
 class User < ActiveRecord::Base
   has_secure_password
   
-  has_many :images, as: :imageable
+  has_many :images, as: :imageable, dependent: :destroy
   has_many :user_items
   has_many :items, :through => :user_items
   
   validates :email, uniqueness: true
+  
+  mount_uploader :uploader, ImageUploader
 
   def full_name
     "#{first_name} #{last_name}"
@@ -17,6 +19,10 @@ class User < ActiveRecord::Base
     else
       images.last
     end
+  end
+  
+  def filename(extension)
+    "#{id}.#{extension}"
   end
   
   # Have/want functions

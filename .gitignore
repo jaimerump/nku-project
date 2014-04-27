@@ -16,3 +16,7 @@
 /tmp
 
 vendor/ruby
+
+public/uploads
+app/assets/images/items
+app/assets/tmp

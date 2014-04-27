@@ -89,7 +89,14 @@
     <span class="validation ss-icon">checkmark</span>
   </fieldset>
   
-  
+  <%= f.fields_for :images do |image| %>
+    <!--// UPLOAD //-->
+    <fieldset id="upload_photo" class="input">
+      <%= image.file_field :uploader %>
+      <button type="button" class="file_upload"><span class="ss-icon">picture</span>Browse For Photo</button>
+      <span class="validation ss-icon">checkmark</span>
+    </fieldset>  
+  <% end %>
   
   
   <!--// BUTTONS //-->
@@ -114,6 +121,11 @@
       $("#packaging_<%= @item.packaging_type %>").prop("checked", true);
     <% end %>
   <% end %>
+      
+  $("form#curate [type='file']").hide();
+  $("form#curate .file_upload").click(function(){
+    $("form#curate [type='file']").click();
+  });
   
   //Curate form submission
   $("form#curate").submit(function(){

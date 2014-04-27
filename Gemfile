@@ -30,3 +30,7 @@ end
 
 # Use has_secure_password for authentication
 gem 'bcrypt-ruby', '~> 3.1.2'
+
+# Use carrierwave for image uploads
+gem 'carrierwave'
+gem 'rmagick'

@@ -1,10 +1,16 @@
 class Image < ActiveRecord::Base
   belongs_to :imageable, polymorphic: true
   
+  mount_uploader :uploader, ImageUploader, mount_on: :uploaded_url
+  
   DEFAULT_HEIGHT = 220
   DEFAULT_WIDTH = 220
   MEDIA_FETCH_HOST = "https://df1pcbhp0ir50.cloudfront.net"
   ASSETS_FETCH_HOST = "https://d25m1i464od8gh.cloudfront.net"
+  
+  def move_and_update
+    uploader.update_db_record
+  end
   
   def self.user_default
     default = Image.new
