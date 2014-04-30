@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   
   validates :email, uniqueness: true
   
-  mount_uploader :uploader, ImageUploader
+  accepts_nested_attributes_for :images
 
   def full_name
     "#{first_name} #{last_name}"

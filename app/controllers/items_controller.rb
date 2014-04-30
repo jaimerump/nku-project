@@ -79,7 +79,7 @@ class ItemsController<ApplicationController
       
     else
       respond_to do |format|
-        format.html{ render 'new' }
+        format.html{ render 'edit' }
         format.json{
           response = Hash.new
           response[:status] = "Error"

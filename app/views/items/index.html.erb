@@ -8,6 +8,8 @@
 
 <p>You can also <%= link_to "see all brands", brands_path %> or <%= link_to "see all users", users_path %></p>
 
+<p>The item you want is missing? <%= link_to "Add it", new_item_path %></p>
+
 <!--// GRID //-->
 <div class="grid">
   <% if @items.size == 0 %>

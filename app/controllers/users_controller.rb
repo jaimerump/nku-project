@@ -75,6 +75,48 @@ class UsersController<ApplicationController
       
     end
   end
+
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = User.find(params[:id])
+    
+    if @user.id != current_user.id
+      respond_to do |format|
+        format.html { redirect_to users_path, notice: "You can't edit someone else's settings!" }
+        format.json{
+          response = Hash.new
+          response['status'] = "Error"
+          response['message'] = "You can't edit someone else's settings!"
+          render json: response
+        }
+      end
+    end
+      
+      if @user.update(user_params)
+        respond_to do |format|
+          format.html{ redirect_to user_path(@user) }
+          format.json{
+            response = Hash.new
+            response[:status] = "Success"
+            response[:message] = "Your settings have been updated!"
+            render json: response
+          }
+        end
+      else
+        respond_to do |format|
+          format.html{ render 'edit' }
+          format.json{
+            response = Hash.new
+            response[:status] = "Error"
+            response[:message] = "#{@user.errors.full_messages.join(", ")}"
+            render json: response
+          }
+        end
+      end
+  end
   
   private
   def user_params

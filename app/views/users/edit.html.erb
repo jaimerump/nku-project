@@ -1,0 +1,146 @@
+<% 
+# Set up layout variables 
+@body_id = "settings"
+@body_classes = "undock"
+%>
+
+<!--// SETTINGS //-->
+<div class="wrapper">
+  
+  <!--// COLUMN A //-->
+  <div class="content">
+    <%= form_for(@user, multipart: true, html: {class: 'settings_form', id: 'settings_account'}) do |f| %>
+    
+      <% if @user.errors.any? %>
+        <% error_string = @user.errors.full_messages.join(", ") %>
+        <script>
+          //Show user errors
+          showGrowl("<%= error_string %>", "error");
+        </script>
+      <% end %>
+    
+      <!--// IMAGE HIDDEN INPUTS //-->
+      <input type="hidden" name="image_height">
+      <input type="hidden" name="image_width">
+      <input type="hidden" name="image_x">
+      <input type="hidden" name="image_y">
+      <ul>
+        <li><h2>Basic Information</h2></li>
+        <li class="field">
+          <label for="name" class="standard">Name</label>
+          <div>
+            <fieldset id="name">
+              <span class="outline">
+                <%= f.text_field :first_name, :placeholder => :first, :html => {class: 'name first'} %>
+              </span>
+              <span class="outline">
+                <%= f.text_field :last_name, :placeholder => :last, :html => {class: 'name last'} %>
+              </span>
+            </fieldset>
+          </div>
+        </li>
+        <li class="field">
+          <label for="email_address" class="standard">Email Address</label>
+          <div>
+            <span class="outline">
+              <%= f.text_field :email, :placeholder => :email %>
+            </span>
+          </div>
+        </li>
+        <li class="field">
+          <label for="username" class="standard">Username</label>
+          <div>
+            <span class="outline">
+              <%= f.text_field :username, :placeholder => :username %>
+            </span>
+          </div>
+        </li>
+        <!--<li class="field">
+  <label for="profile_picture" class="standard">Profile Picture</label>
+  <div>
+  <fieldset>
+  <div class="profile_picture_preview">
+  <img id="current_profile_picture" src="https://d25m1i464od8gh.cloudfront.net/web/gif/blank.gif" style="height: 100%; width: 100%; background-image: url(<?php echo Sanitize::html( $user_picture ); ?>); background-size: cover;"/>
+  </div>
+  <div class="profile_picture_function">
+  <input type="file" name="user_picture" style="display:none;" />
+  <button type="button" id="change_profile_picture"><span class="ss-icon">camera</span>Change Picture</button>
+  </div>
+  <small>Your profile picture should be something unique that shows who you are. There is a file size limit of 2 MB.</small>
+  </fieldset>
+  </div>
+  </li>-->
+       
+      </ul>
+      <div class="form_footer">
+        <div class="form_footer_buttons">
+          <%= link_to(users_path) do %>
+          <button type="button" name="cancel"><span class="ss-icon">delete</span>Cancel</button>
+          <% end %>
+          <button type="submit"><span class="ss-icon">checkmark</span>Save Settings</button>
+        </div>
+      </div>
+    <% end %>
+  </div>	
+</div>
+
+<script>
+
+$("#settings_account").submit(function(){
+	/* Gets the data from the form, validates it, and sends it to the back end. */
+	
+	//Get the data
+	var email = $("#settings_account [name='user[email]']").val();
+	var username = $("#settings_account [name='user[username]']").val();
+	var first = $("#settings_account [name='user[first_name]']").val();
+	var last = $("#settings_account [name='user[last_name]']").val();
+	
+	//Validate the data
+	//Check email
+	if( isBlank( email ) || !isEmail( email ) ){
+		showGrowl("You must provide a valid email address.", "error");
+		return false;
+	}
+	
+	//Check that username contains valid characters
+	if( username.match( /[^a-zA-Z0-9_\-\.]+/ ) != null ){
+		showGrowl("Username contains invalid characters. Only A-Z, 0-9,  -, _, and . are allowed.", "error");
+		return false;
+	}
+	
+	//Check name
+	if( isBlank( first ) ){
+		showGrowl("You must provide your name.", "error");
+		return false;
+	}
+	
+	
+	//Send data to back end
+	var formData = new FormData($('#settings_account')[0]);
+	$.ajax({
+		type: "POST",
+		url: $(this).prop('action'),
+		data: formData,
+		processData: false,
+		contentType: false,
+		dataType: "json",
+		success: function( response, status, xhr )
+		{ 
+			if( response.status == 'Success' ){
+				showGrowl( response.message, 'success' );
+			}
+			else{
+				showGrowl( response.message, 'error' );
+			}
+			
+		},
+		error: function( xhr, status, error ){
+			showGrowl("An error occurred. Please refresh and try again. ", 'error');
+		}
+	});
+
+	
+	return false; //Prevent refresh
+});
+
+</script>

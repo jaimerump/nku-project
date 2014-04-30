@@ -3,7 +3,7 @@ class Brand < ActiveRecord::Base
   has_many :items
   has_many :images, as: :imageable, dependent: :destroy
   
-  mount_uploader :uploader, ImageUploader
+  accepts_nested_attributes_for :images
   
   def image
     if( images.size == 0 )
