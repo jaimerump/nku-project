@@ -66,3 +66,30 @@ Testing Steps:
 6. Click the checkmark on an item entry to indicate that you have that item
 7. Click the heart on an item entry to indicate that you're missing the item and want it
 8. If you use a tool like Postman to send a request to http://rumpj2-72842.use1.nitrousbox.com/users/1, /brands/1, or /items/1 asking for a JSON response, you'll receive a JSON representation of that object. This is the beginning of a REST API.
+
+# 5-02-14
+
+```
+As a curator
+I want to add items
+So there is more stuff for the collectors to enjoy
+```
+
+```
+As a curator
+I want to edit items
+Because sometimes I enter bad data the first time
+```
+
+```
+As a user
+I want to edit my settings
+Because I just thought of a way better username
+```
+
+Testing Steps:
+
+1. To add an item, click the add link on the items index page.
+2. To edit an item, click into its profile, then click the edit link at the top.
+3. Both take you to the curate form, which allows you to update an item's data and upload images for it.
+4. To edit your settings, select the settings option from the gear menu in the top right corner.
